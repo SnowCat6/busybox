@@ -244,6 +244,8 @@ make_new_session(
 		IF_FEATURE_TELNETD_STANDALONE(int sock)
 		IF_NOT_FEATURE_TELNETD_STANDALONE(void)
 ) {
+//  SnowCat compiler internal error
+#if 0
 #if !ENABLE_FEATURE_TELNETD_STANDALONE
 	enum { sock = 0 };
 #endif
@@ -387,6 +389,7 @@ make_new_session(
 	/* _exit is safer with vfork, and we shouldn't send message
 	 * to remote clients anyway */
 	_exit(EXIT_FAILURE); /*bb_perror_msg_and_die("execv %s", G.loginpath);*/
+#endif
 }
 
 #if ENABLE_FEATURE_TELNETD_STANDALONE
@@ -394,6 +397,8 @@ make_new_session(
 static void
 free_session(struct tsession *ts)
 {
+//  SnowCat compiler internal error
+#if 0
 	struct tsession *t;
 
 	if (option_mask32 & OPT_INETD)
@@ -438,6 +443,7 @@ free_session(struct tsession *ts)
 #endif
 		ts = ts->next;
 	}
+#endif
 }
 
 #else /* !FEATURE_TELNETD_STANDALONE */

@@ -44,6 +44,7 @@ int FAST_FUNC vasprintf(char **string_ptr, const char *format, va_list p)
 }
 #endif
 
+#define HAVE_DPRINTF 1
 #ifndef HAVE_DPRINTF
 /* dprintf is now part of POSIX.1, but was only added in 2008 */
 int dprintf(int fd, const char *format, ...)
