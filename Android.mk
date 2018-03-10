@@ -97,6 +97,7 @@ BUSYBOX_C_INCLUDES = \
 	bionic/libc/private \
 	bionic/libm/include \
 	bionic/libc \
+	bionic/libc/async_safe/include \
 	bionic/libm \
 	libc/kernel/common \
 	external/libselinux/include \
